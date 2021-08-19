@@ -21,7 +21,7 @@ const Header = () => {
           {" "}
           CONTACT
         </Link>
-        <Link className="option" to="/login">
+        <Link className="option" to="/signIn">
           {" "}
           LOGIN
         </Link>

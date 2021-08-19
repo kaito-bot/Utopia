@@ -1,0 +1,36 @@
+@mixin shrink {
+  color: gray;
+  top: -14px;
+  font-size: 18px;
+}
+
+.group {
+  position: relative;
+  margin: 2rem 0rem;
+
+  .form-input {
+    padding: 10px;
+    width: 100%;
+    background-color: white;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 22px;
+    margin: 10px 0px;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .form-input-label {
+      @include shrink();
+    }
+  }
+
+  .form-input-label {
+    position: absolute;
+    left: 0px;
+    top: 10px;
+    font-size: 22px;
+    transition: all 300ms ease-in-out;
+  }
+}
