@@ -16,7 +16,7 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 // checks if user does not exist before
-// add details of auth in database for that user 
+// add details of auth in database for that user
 export const createUserProfileDoc = async (userAuth, additionalInfo) => {
   if (!userAuth) {
     return;
@@ -25,7 +25,7 @@ export const createUserProfileDoc = async (userAuth, additionalInfo) => {
   const userRef = firestore.doc(`Users/${userAuth.uid}`);
   // CollectionReference
   const snapShot = await userRef.get();
-  console.log(snapShot);
+  //console.log(snapShot);
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
@@ -36,6 +36,7 @@ export const createUserProfileDoc = async (userAuth, additionalInfo) => {
       console.log("some error occured, can't resolve");
     }
   }
+  //console.log(userRef);
   return userRef;
 };
 
