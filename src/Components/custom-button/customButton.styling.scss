@@ -11,6 +11,8 @@
   font-family: "Dosis", sans-serif;
   font-weight: 700;
   border: none;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: white;
@@ -25,6 +27,18 @@
     &:hover {
       background-color: rgba(66, 133, 244, 1);
       font-weight: 700;
+      border: none;
+    }
+  }
+
+  &.inverted {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+
+    &:hover {
+      background-color: black;
+      color: white;
       border: none;
     }
   }
