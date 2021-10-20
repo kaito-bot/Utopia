@@ -1,25 +1,10 @@
 import React from "react";
 import "./shoppage.styling.scss";
-import CollectionPreview from "../../Components/collectionPreview/collection-preview.component";
-
-import { connect } from "react-redux";
-
-import { selectCollections } from "../../redux/shop/shop.selectors";
-
-const ShopPage = ({ collection }) => (
+import CollectionOverview from "../../Components/collection-overview/collection-overview.component";
+const ShopPage = () => (
   <div className="shoppage">
-    <h1>Collections</h1>
-    {collection.map(({ id, ...otherCollectionProps }) => {
-      return (
-        <div key={id}>
-          <CollectionPreview key={id} {...otherCollectionProps} />
-        </div>
-      );
-    })}
+    <CollectionOverview />
   </div>
 );
 
-const mapStateToProps = (state) => ({
-  collection: selectCollections(state),
-});
-export default connect(mapStateToProps)(ShopPage);
+export default ShopPage;
