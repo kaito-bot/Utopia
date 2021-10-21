@@ -1,11 +1,20 @@
 import React from "react";
 import "./collection.styling.scss";
 import ItemsPreview from "../../Components/items-preview/items-preview.component";
+import { connect } from "react-redux";
+import { selectExactCollection } from "../../redux/shop/shop.selectors";
 
-const CollectionPage = ({ match }) => (
-  <div className="category">
-    <h2>CATEGORY PAGE</h2>
-  </div>
-);
+const CollectionPage = ({ collection }) => {
+  //console.log("match", match.params.collectionId);
+  //console.log(collection);
+  return (
+    <div className="collection">
+      <h2>COLLECTION PAGE</h2>
+    </div>
+  );
+};
 
-export default CollectionPage;
+const mapStateToProps = (state, ownProps) => ({
+  collection: selectExactCollection(ownProps.match.params.collectionId)(state),
+});
+export default connect(mapStateToProps)(CollectionPage);
