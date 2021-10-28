@@ -1,11 +1,11 @@
 import React from "react";
-import "./homepage.styling.scss";
 import Menu from "../../Components/menu/menu.component";
+import { HomePageContainer } from "./homepage.styling";
 const HomePage = () => {
   return (
-    <div className="homepage">
+    <HomePageContainer>
       <Menu />
-    </div>
+    </HomePageContainer>
   );
 };
 
