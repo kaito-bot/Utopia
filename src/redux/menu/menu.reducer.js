@@ -35,7 +35,7 @@ const INITIAL_STATE = {
       size: "large",
       imageUrl:
         "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-      linkUrl: " shop/mens",
+      linkUrl: "shop/mens",
     },
   ],
 };
