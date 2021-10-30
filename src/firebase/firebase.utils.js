@@ -23,8 +23,12 @@ export const createUserProfileDoc = async (userAuth, additionalInfo) => {
   }
   // DocumentReference
   const userRef = firestore.doc(`Users/${userAuth.uid}`);
-  // CollectionReference
+  //CollectionReference
+  const collectionRef = firestore.collection("Users");
+  // Document Snapshot
   const snapShot = await userRef.get();
+  const collectionSnapShot = await collectionRef.get();
+  console.log({ collectionSnapShot });
   //console.log(snapShot);
 
   if (!snapShot.exists) {
@@ -38,6 +42,25 @@ export const createUserProfileDoc = async (userAuth, additionalInfo) => {
   }
   //console.log(userRef);
   return userRef;
+};
+
+//to shift shop data present on the frontend to backend (firebase)
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  const collectionRef = firestore.collection(collectionKey);
+  console.log("collectionRef", collectionRef);
+
+  const batch = firestore.batch();
+  objectsToAdd.forEach((obj) => {
+    console.log(obj);
+    const newDocRef = collectionRef.doc(); //make new document reference objects
+    console.log(newDocRef);
+    batch.set(newDocRef, obj); //to batch these calls together
+  });
+
+  return await batch.commit();
 };
 
 //GoogleAuth
