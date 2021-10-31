@@ -63,6 +63,22 @@ export const addCollectionAndDocuments = async (
   return await batch.commit();
 };
 
+//to make collection snapshots that are arrays to objects
+export const convertCollectionSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map((doc) => {
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items,
+    };
+  });
+
+  console.log(transformedCollection);
+};
+
 //GoogleAuth
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
