@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { selectExactCollection } from "../../redux/shop/shop.selectors";
 
 const CollectionPage = ({ collection }) => {
-  //console.log("match", match.params.collectionId);
   console.log(collection);
   const { title, items } = collection;
   return (

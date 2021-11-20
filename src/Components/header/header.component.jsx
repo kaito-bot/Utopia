@@ -8,13 +8,15 @@ import {
 } from "./header.styling";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebase.utils";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import CartIcon from "../cart-icon/cart-icon.component";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 
-const Header = ({ currentUser, hidden }) => {
+const Header = () => {
+  const currentUser = useSelector(selectCurrentUser);
+  const hidden = useSelector(selectCartHidden);
   return (
     <HeaderContainer>
       <div>
@@ -44,8 +46,5 @@ const Header = ({ currentUser, hidden }) => {
     </HeaderContainer>
   );
 };
-const mapStatetoProps = (state) => ({
-  currentUser: selectCurrentUser(state),
-  hidden: selectCartHidden(state),
-});
-export default connect(mapStatetoProps)(Header);
+
+export default Header;
