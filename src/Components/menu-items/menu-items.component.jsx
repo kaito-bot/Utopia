@@ -1,13 +1,15 @@
 import React from "react";
 //import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import "./menu-items.styling.scss";
-const MenuItems = ({ title, imageUrl, size, history, match, linkUrl }) => {
+const MenuItems = ({ title, imageUrl, size, linkUrl }) => {
+  const history = useHistory();
+  const location = useLocation();
   return (
     <div
       className={`${size} menu-items`}
       onClick={() => {
-        history.push(`${match.url}${linkUrl}`);
+        history.push(`${location.pathname}${linkUrl}`);
       }}
     >
       <div
@@ -22,4 +24,4 @@ const MenuItems = ({ title, imageUrl, size, history, match, linkUrl }) => {
   );
 };
 
-export default withRouter(MenuItems);
+export default MenuItems;

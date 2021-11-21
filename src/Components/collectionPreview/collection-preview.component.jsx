@@ -1,16 +1,18 @@
 import React from "react";
 import ItemsPreview from "../items-preview/items-preview.component";
 import "./collection-preview.styling.scss";
-import { withRouter } from "react-router";
+import { useHistory, useLocation } from "react-router";
 
-const CollectionPreview = ({ title, items, history, match }) => {
+const CollectionPreview = ({ title, items }) => {
+  const history = useHistory();
+  const location = useLocation();
   return (
     <div className="collection-preview">
       <h1
         className="title"
         onClick={() => {
           console.log(title);
-          history.push(`${match.url}/${title.toLowerCase()}`);
+          history.push(`${location.pathname}/${title.toLowerCase()}`);
         }}
       >
         {title}
@@ -28,4 +30,4 @@ const CollectionPreview = ({ title, items, history, match }) => {
   );
 };
 
-export default withRouter(CollectionPreview);
+export default CollectionPreview;
