@@ -19,7 +19,7 @@ const StripeCheckoutButton = ({ price }) => {
       .catch((error) => {
         console.log("payment error", error.response);
         alert(
-          "there was an issue with your payment.Please make sure you use the provided credit card"
+          "there was an issue with your payment. Please make sure you use the provided credit card"
         );
       });
   };

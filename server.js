@@ -4,9 +4,6 @@ const path = require("path");
 // const cors = require("cors");
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
-// const stripe = require("stripe")(
-//   "sk_test_51JnGmXSJbXLGu5DTfOZyodIaoC71LNb2V0XOW67feiqf3t9W89OBDCiBUtMGW6dJapMARsrRII25YUstJzbAIjfC002qB6GzHG"
-// );
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
