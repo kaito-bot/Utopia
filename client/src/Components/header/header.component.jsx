@@ -43,8 +43,9 @@ const Header = ({ clearOnSignout }) => {
         ) : (
           <OptionLink to="/signIn">SIGN IN</OptionLink>
         )}
-
-        <CartIcon />
+        <OptionDiv>
+          <CartIcon />
+        </OptionDiv>
       </NavigationContainer>
       {hidden ? null : <CartDropdown />}
     </HeaderContainer>
@@ -53,4 +54,4 @@ const Header = ({ clearOnSignout }) => {
 const mapDispatchToProps = (dispatch) => ({
   clearOnSignout: () => dispatch(clearCartOnSignout()),
 });
-export default connect(null,mapDispatchToProps)(Header);
+export default connect(null, mapDispatchToProps)(Header);
