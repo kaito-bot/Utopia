@@ -26,7 +26,7 @@ const INITIAL_STATE = {
       id: 4,
       size: "large",
       imageUrl:
-        "https://images.unsplash.com/photo-1440186170739-681f007fc4d1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+        "https://images.unsplash.com/photo-1442810030476-6d83b45a1094?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTE4fHx3b21hbnxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60",
       linkUrl: "shop/womens",
     },
     {
@@ -34,7 +34,7 @@ const INITIAL_STATE = {
       id: 5,
       size: "large",
       imageUrl:
-        "https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
+        "https://media.istockphoto.com/photos/handsome-man-sitting-on-old-classic-scooter-picture-id1201029095?b=1&k=20&m=1201029095&s=170667a&w=0&h=nsYMx6MyQKp9CCmEMLvbCsvD1zxgfkP7na0x2hrCiNc=",
       linkUrl: "shop/mens",
     },
   ],
