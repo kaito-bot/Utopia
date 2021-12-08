@@ -6,6 +6,8 @@ const OptionContainerStyles = css`
   color: black;
   padding: 15px;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
 `;
 
 export const HeaderContainer = styled.div`
