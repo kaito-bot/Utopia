@@ -28,7 +28,6 @@ const Header = ({ clearOnSignout }) => {
       </div>
       <NavigationContainer>
         <OptionLink to="/shop">SHOP</OptionLink>
-        <OptionLink to="/Contact">CONTACT</OptionLink>
 
         {currentUser ? (
           <OptionDiv

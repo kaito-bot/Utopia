@@ -1,8 +1,26 @@
-.preview {
-  display: flex;
-  justify-content: space-between;
+.collection-preview {
+  .preview {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .title {
   cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .collection-preview {
+    align-items: center;
+    justify-content: space-around;
+
+    .title {
+      text-align: center;
+    }
+    .preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+    }
+  }
 }

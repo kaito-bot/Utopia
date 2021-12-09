@@ -37,13 +37,71 @@
     justify-content: space-between;
 
     .name {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: bold;
     }
 
     .price {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: bold;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .collection-item {
+    width: 40vw;
+    height: 20rem;
+
+    .custom-button {
+      font-size: 0.9rem;
+    }
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+      .custom-button {
+        opacity: unset;
+        top: 220px;
+      }
+    }
+
+    .collection-footer {
+      .name {
+        font-size: 0.9rem;
+      }
+      .price {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 501px) and (max-width: 800px) {
+  .collection-item {
+    width: 40vw;
+    height: 25rem;
+
+    .custom-button {
+      font-size: 0.9rem;
+    }
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+      .custom-button {
+        opacity: unset;
+        top: 220px;
+      }
+    }
+
+    .collection-footer {
+      .name {
+        font-size: 1.1rem;
+      }
+      .price {
+        font-size: 1.1rem;
+      }
     }
   }
 }
