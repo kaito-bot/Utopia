@@ -15,6 +15,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
+import SignIn from "./Components/sign-in/sign-in.component";
+import SignUp from "./Components/sign-up/sign-up.component";
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
@@ -47,6 +49,21 @@ const App = () => {
         <Route exact path="/checkout" component={CheckoutPage} />
         <Route
           exact
+          path="/signinresp"
+          render={() => {
+            return currentUser ? <Redirect to="/" /> : <SignIn />;
+          }}
+        />
+        <Route
+          exact
+          path="/signupresp"
+          render={() => {
+            return currentUser ? <Redirect to="/" /> : <SignUp />;
+          }}
+        />
+
+        <Route
+          exact
           path="/signIn"
           render={() => {
             return currentUser ? <Redirect to="/" /> : <SignUpAndSignInPage />;
@@ -56,7 +73,5 @@ const App = () => {
     </div>
   );
 };
-
-
 
 export default App;

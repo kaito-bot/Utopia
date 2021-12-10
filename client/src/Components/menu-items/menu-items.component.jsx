@@ -10,6 +10,7 @@ const MenuItems = ({ title, imageUrl, size, linkUrl }) => {
       className={`${size} menu-items`}
       onClick={() => {
         history.push(`${location.pathname}${linkUrl}`);
+        console.log(history.push(`${location.pathname}${linkUrl}`));
       }}
     >
       <div
