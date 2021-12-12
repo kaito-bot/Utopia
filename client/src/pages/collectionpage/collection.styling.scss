@@ -17,3 +17,20 @@
     }
   }
 }
+
+@media screen and (max-width: 800px) {
+  .collection-page {
+    align-items: center;
+    .title {
+      font-size: 38px;
+      margin-top: 4rem;
+    }
+    .items {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      & .collection-item {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}
