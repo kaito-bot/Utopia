@@ -32,7 +32,7 @@ const StripeCheckoutButton = ({ price }) => {
       shippingAddress
       amount={priceForStripe}
       image="https://p.kindpng.com/picc/s/233-2335795_anime-chibi-with-transparent-background-png-download-transparent.png"
-      description={`Your total is $${price}`}
+      description={`Your total is ₹${price}`}
       panelLabel="pay Now"
       token={onToken}
       stripeKey={publishableKey}
