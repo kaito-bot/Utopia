@@ -16,7 +16,7 @@ const SignUpAndSignInPage = () => {
               <button
                 className="signIn-responsive "
                 onClick={() => {
-                  //console.log("this is sign-In mob");
+                  
                   history.push("/signinresp");
                 }}
               >
@@ -26,7 +26,7 @@ const SignUpAndSignInPage = () => {
               <button
                 className="signUp-responsive"
                 onClick={() => {
-                  //console.log("this is sign-Up mob");
+                  
                   history.push("/signupresp");
                 }}
               >
