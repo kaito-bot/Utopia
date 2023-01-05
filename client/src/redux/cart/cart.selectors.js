@@ -3,6 +3,8 @@ import { createSelector } from "reselect";
 //cart selector - input selector
 const selectCart = (state) => state.cart;
 
+// cartItems selector - output selector
+// used in checkout component, returns the cartItems array
 export const selectCartItems = createSelector(
   [selectCart],
   (cart) => cart.cartItems
@@ -11,6 +13,7 @@ export const selectCartItems = createSelector(
 export const selectCartItemsCount = createSelector(
   [selectCartItems],
   (cartItems) =>
+    //calculate the overall quantity of items
     cartItems.reduce(
       (accumalatedQuantity, cartItem) =>
         accumalatedQuantity + cartItem.quantity,

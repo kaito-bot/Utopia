@@ -22,8 +22,11 @@ const App = () => {
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
   useEffect(() => {
+    //unsubsribeUser has value firebase.unsubscribe returned by onAuthStateChanged
     const unsubscribeUser = auth.onAuthStateChanged(async (userAuth) => {
+      //checks if userAuth has some value or is it null
       if (userAuth) {
+        //returns userRef
         const userRef = await createUserProfileDoc(userAuth);
         userRef.onSnapshot((snapShot) => {
           dispatch(
@@ -47,6 +50,7 @@ const App = () => {
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />
         <Route exact path="/checkout" component={CheckoutPage} />
+        {/* for mobile view */}
         <Route
           exact
           path="/signinresp"

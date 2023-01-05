@@ -9,6 +9,7 @@ const SignUpAndSignInPage = () => {
   return (
     <div className="signin-page">
       <div>
+        {/* for mobile */}
         <Media
           query="(max-width: 800px)"
           render={() => (
@@ -16,7 +17,6 @@ const SignUpAndSignInPage = () => {
               <button
                 className="signIn-responsive "
                 onClick={() => {
-                  
                   history.push("/signinresp");
                 }}
               >
@@ -26,7 +26,6 @@ const SignUpAndSignInPage = () => {
               <button
                 className="signUp-responsive"
                 onClick={() => {
-                  
                   history.push("/signupresp");
                 }}
               >

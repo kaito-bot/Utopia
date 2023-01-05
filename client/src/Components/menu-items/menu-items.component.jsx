@@ -9,8 +9,9 @@ const MenuItems = ({ title, imageUrl, size, linkUrl }) => {
     <div
       className={`${size} menu-items`}
       onClick={() => {
+        /*this pushes a new entry onto the history stack */
         history.push(`${location.pathname}${linkUrl}`);
-        console.log(history.push(`${location.pathname}${linkUrl}`));
+        //console.log(history.push(`${location.pathname}${linkUrl}`));
       }}
     >
       <div

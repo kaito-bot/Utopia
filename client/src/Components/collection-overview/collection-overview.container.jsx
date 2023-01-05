@@ -7,12 +7,15 @@ import CollectionOverview from "./collection-overview.component";
 
 import { compose } from "redux";
 
+//returns an object with same key but with the selector replaced with its value.
 const mapStateToProps = createStructuredSelector({
   isLoading: selectIsCollectionFetching,
 });
 
+//composes the argument functions - returns a composite function
 const CollectionOverviewContainer = compose(
   connect(mapStateToProps),
+  // a higher order component that will take CollectionOverview component as a wrappercomponent
   WithSpinner
 )(CollectionOverview);
 

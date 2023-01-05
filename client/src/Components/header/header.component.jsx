@@ -28,7 +28,9 @@ const Header = ({ clearOnSignout }) => {
       </div>
       <NavigationContainer>
         <OptionLink to="/shop">SHOP</OptionLink>
-
+        {/*checks for currentUser's value
+       if it is not null signout message would render 
+       else sign in option with redirecting to signin page would show up*/}
         {currentUser ? (
           <OptionDiv
             onClick={() => {
@@ -53,4 +55,5 @@ const Header = ({ clearOnSignout }) => {
 const mapDispatchToProps = (dispatch) => ({
   clearOnSignout: () => dispatch(clearCartOnSignout()),
 });
+//
 export default connect(null, mapDispatchToProps)(Header);

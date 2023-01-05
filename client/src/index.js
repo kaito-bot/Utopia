@@ -9,8 +9,10 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux/store";
 
 ReactDOM.render(
+  //makes redux store available
   <Provider store={store}>
     <BrowserRouter>
+      {/* delays the rendering of your app's UI */}
       <PersistGate persistor={persistor}>
         <App />
       </PersistGate>

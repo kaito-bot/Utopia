@@ -9,7 +9,9 @@ import shopReducer from "./shop/shop.reducer";
 
 const persistConfig = {
   key: "root",
+  //saves redux store in local storage
   storage,
+  //cart will be persisted
   whitelist: ["cart"],
 };
 
@@ -19,5 +21,5 @@ const rootReducer = combineReducers({
   menu: menuReducer,
   shop: shopReducer,
 });
-
+//creates persisted reducer
 export default persistReducer(persistConfig, rootReducer);

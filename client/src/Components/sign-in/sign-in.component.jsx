@@ -12,6 +12,7 @@ const SignIn = () => {
   });
   const { email, password } = userCredentials;
   const handleSubmit = async (event) => {
+    //cancels the default action of the event
     event.preventDefault();
 
     try {
@@ -20,6 +21,7 @@ const SignIn = () => {
       console.log(error);
       alert("incorrect email or password");
     }
+    // changes back to inital state
     setUserCredentials({ email: "", password: "" });
   };
 

@@ -15,22 +15,24 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-// checks if user does not exist before
 // add details of auth in database for that user
 export const createUserProfileDoc = async (userAuth, additionalInfo) => {
+  //if userAuth is null then return
   if (!userAuth) {
     return;
   }
+  console.log(userAuth);
   // DocumentReference
   const userRef = firestore.doc(`Users/${userAuth.uid}`);
   //CollectionReference
   const collectionRef = firestore.collection("Users");
-  // Document Snapshot
+  // get snapshot of user
   const snapShot = await userRef.get();
+  console.log({ snapShot });
   const collectionSnapShot = await collectionRef.get();
   console.log({ collectionSnapShot });
   //console.log(snapShot);
-
+  // checks if user does not exist before and adds data if this holds true
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const date = new Date();
@@ -63,7 +65,6 @@ export const addCollectionAndDocuments = async (
   return await batch.commit();
 };
 
-//to make collection snapshots that are arrays to objects
 export const convertCollectionSnapshotToMap = (collections) => {
   const transformedCollection = collections.docs.map((doc) => {
     const { title, items } = doc.data();
@@ -78,12 +79,15 @@ export const convertCollectionSnapshotToMap = (collections) => {
 
   return transformedCollection.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
+    //console.log(accumulator);
     return accumulator;
   }, {});
 };
 
 //GoogleAuth
 const provider = new firebase.auth.GoogleAuthProvider();
+
+//The authorization server prompts the user to select a user account
 provider.setCustomParameters({ prompt: "select_account" });
 
 export const signInWithGoogle = () => {

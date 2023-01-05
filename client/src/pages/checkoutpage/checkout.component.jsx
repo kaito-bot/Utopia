@@ -8,13 +8,17 @@ import CheckoutItem from "../../Components/checkout-item/checkout-item.component
 
 import StripeCheckoutButton from "../../Components/stripe-button/stripe-button.component";
 const CheckoutPage = () => {
+  //gives the cartItems (array of objects)
   const cartItems = useSelector(selectCartItems);
+
+  //gives the total
   const total = useSelector(selectCartTotal);
   return (
     <div className="checkout-page">
       <div className="checkout-header">
         <div className="header-block">
           <span>Product</span>
+          {/*console.log(cartItems)*/}
         </div>
         <div className="header-block">
           <span>Description</span>
