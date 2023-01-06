@@ -15,6 +15,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
 
+  app.get("/hello", (_, res) => res.send("Hello from kaito-bot"));
+
   app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
@@ -25,7 +27,7 @@ app.listen(port, (error) => {
   console.log("Server running on port " + port);
 });
 
-app.post("/api/payment", (req, res) => {
+app.post("/payment", (req, res) => {
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,
