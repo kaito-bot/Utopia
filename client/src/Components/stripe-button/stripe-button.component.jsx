@@ -9,7 +9,7 @@ const StripeCheckoutButton = ({ price }) => {
   const onToken = (token) => {
     // makes a post request to the payment endpoint
     axios({
-      url: "payment",
+      url: "https://utopias-backend.onrender.com/api/payment",
       method: "post",
       data: { amount: priceForStripe, token: token },
     })
